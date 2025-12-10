@@ -4,13 +4,13 @@ Traditional Chinese painting (水墨畫) relies on expressive brush strokes, con
 
 ## Approaches
 
-- Blank Areas Are Incorrectly Filled With Texture
-Content-Aware Weighting (White-space Mask)
-Reduces style loss weight in blank zones.
-- Model ignores brush features.
-Multi-scale Style Loss (Laplacian Pyramid)
-Produces natural gradations of ink density
+- Blank Areas Are Incorrectly Filled With Texture  
+  - Content-Aware Weighting (White-space Mask)  
+  - Reduces style loss weight in blank zones.
 
+- Model ignores brush features.  
+  - Multi-scale Style Loss (Laplacian Pyramid)  
+  - Produces natural gradations of ink density.
 
 ## Laplacian Pyramid loss
 
