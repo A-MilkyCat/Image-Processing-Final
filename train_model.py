@@ -6,8 +6,9 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from torchvision import datasets
 from torch.utils.tensorboard import SummaryWriter
-from models import loss_models, transformation_models
-
+from models import transformation_models
+# from models import my_loss_models as loss_models # CHANGED
+from models import loss_models
 from argument_parsers import training_parser
 
 class StyleModelTrainer:
@@ -69,12 +70,16 @@ class StyleModelTrainer:
                 content_loss = self.loss_model.total_content_loss
                 style_loss = self.loss_model.total_style_loss
                 tv_loss = self.loss_model.tv_loss.loss
+                # gabor_loss     = self.loss_model.total_gabor_loss
+                # laplace_loss   = self.loss_model.total_laplacian_loss
                 current_iteration = batch * training_config["batch_size"]
                 if current_iteration % 500 == 0:
                     current = batch * len(x)
                     print(f"style loss: {style_loss.item():>7f}", end="\t")
                     print(f"content loss: {content_loss.item():>7f}", end="\t")
-                    print(f"tv loss: {tv_loss.item():>7f}", end="\t")
+                    # print(f"gabor loss: {gabor_loss.item():>7f}", end="\t")
+                    # print(f"laplacian loss: {laplace_loss.item():>7f}", end="\t")
+                    # print(f"tv loss: {tv_loss.item():>7f}", end="\t")
                     print(f"total loss: {loss.item():>7f}", end="\t")
                     print(f"[{current:>5d}/{dataset_size:>5d}]")
 

@@ -2,7 +2,7 @@
 import argparse
 from saved_models.pretrained_models import PRETRAINED_MODELS
 import torch
-
+import os
 
 def stylize_image_parser() -> argparse.Namespace:
     parser = argparse.ArgumentParser("Stylize an image")
@@ -44,6 +44,13 @@ def stylize_image_parser() -> argparse.Namespace:
         )
     if not args.model_path:
         args.model_path = PRETRAINED_MODELS[args.pretrained_model]
+
+    #CHANGED
+    base_name = os.path.basename(args.image_path)
+    # 拆掉副檔名
+    name_wo_ext = os.path.splitext(base_name)[0]
+    # 新的存檔路徑
+    args.save_path = os.path.join("images/generated_images", f"{name_wo_ext}.png")
 
     return args
 
