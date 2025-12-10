@@ -35,8 +35,8 @@ Traditional Chinese painting (水墨畫) relies on expressive brush strokes, con
 </div>
 
 ## Setting This Up On Your Computer
-Soon to be implemented 💪 (I just need to package all dependencies into a file for people to download)
-<!-- TODO: package all dependencies into a yaml file -->
+This project is very easy to set up — all required dependencies can be installed in just a few steps.  
+The code has been tested with **Python 3.11**
 
 ## How To Style Your Image Or Video
 You'll have to first navigate to the project file in your terminal.
